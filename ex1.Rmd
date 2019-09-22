@@ -1,0 +1,24 @@
+---
+title: "Rmarkdown exercise"
+author: "Reto Zihlmann"
+date: "22 September 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Sample from log-normal distribution
+
+First we are goint to sample 100 values from a log-normal distribtion with the mean and variance on log scale being 1 and 0.25, respectively. Then we create a histogram of the 100 values on original scale and on log scale.
+
+
+```{r}
+mysample <- rlnorm(100, meanlog = 1, sdlog = 0.25)
+hist(mysample)
+hist(log(mysample))
+```
+
+
+The mean of the sample is `r mean(mysample)` and the variance of the sample is `r var(mysample)` on the original scale.
